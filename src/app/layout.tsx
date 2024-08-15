@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Portfolio | Guanming Liu",
-  description: "Portfolio Page of Guanming Liu, a Frontend Web Developer",
+  description: "Portfolio Page of Guanming Liu, a Software Developer that is proficient in Frontend Frameworks",
 };
 
 export default function RootLayout({

@@ -1,0 +1,28 @@
+.profileCard {
+    @apply flex flex-col justify-center items-center;
+    @apply p-6 border-4 rounded-lg border-blue-700;
+}
+
+.profileTitle {
+    @apply font-semibold mb-2;
+}
+
+.workTitle {
+    @apply mb-4 border-2 rounded-lg border-gray-700;
+}
+
+.workCard {
+    @apply mt-4 p-2 border-4 rounded-lg border-gray-400;
+}
+
+.workCardImage {
+    @apply object-contain;
+}
+
+.workCardTitle {
+    @apply font-semibold;
+}
+
+.workCardParagraph {
+    @apply hyphens-auto break-words;
+}
