@@ -4,7 +4,7 @@ import { GitHub, LinkedIn, Twitter, Email } from '@mui/icons-material';
 
 const Footer: React.FC = () => {
   return (
-    <Box component="footer" sx={{ bgcolor: 'primary.main', color: 'white', py: 3, mt: 5 }}>
+    <Box component="footer" sx={{ bgcolor: 'primary.main', color: 'white', py: 3 }}>
       <Container maxWidth="lg">
         <Grid container spacing={4} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
           {/* About Me Section */}

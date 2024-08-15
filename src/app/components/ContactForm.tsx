@@ -6,6 +6,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import ReCAPTCHA from 'react-google-recaptcha';
+import styles from './contactForm.module.css';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const ContactForm: React.FC = () => {
   const [name, setName] = useState('');
@@ -14,6 +16,7 @@ const ContactForm: React.FC = () => {
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
   const [alertSeverity, setAlertSeverity] = useState<'success' | 'error'>('success');
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,7 +56,7 @@ const ContactForm: React.FC = () => {
       id='contact-section'
       component="form"
       onSubmit={handleSubmit}
-      sx={{ mt: 3, mx: 'auto', width: { xs:'100%', sm: '90%', md:'60%', lg:'50%' }, textAlign: 'center', justifyContent: 'center' }}
+      className={styles.container}
     >
       <Typography variant="h4" gutterBottom>
         Contact Me
@@ -72,6 +75,19 @@ const ContactForm: React.FC = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
+        sx={{
+          '& .MuiOutlinedInput-root': {
+            '&.Mui-focused fieldset': {
+              borderColor: prefersDarkMode ? '#F0F0F0' : 'defaultColor',
+            },
+            color: prefersDarkMode ? '#F0F0F0' : 'defaultTextColor',
+          },
+          '& .MuiInputLabel-root': {
+            '&.Mui-focused': {
+              color: prefersDarkMode ? '#F0F0F0' : 'defaultColor',
+            },
+          },
+        }}
       />
       <TextField
         fullWidth
@@ -81,16 +97,42 @@ const ContactForm: React.FC = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
+        sx={{
+          '& .MuiOutlinedInput-root': {
+            '&.Mui-focused fieldset': {
+              borderColor: prefersDarkMode ? '#F0F0F0' : 'defaultColor',
+            },
+            color: prefersDarkMode ? '#F0F0F0' : 'defaultTextColor',
+          },
+          '& .MuiInputLabel-root': {
+            '&.Mui-focused': {
+              color: prefersDarkMode ? '#F0F0F0' : 'defaultColor',
+            },
+          },
+        }}
       />
       <TextField
         fullWidth
         margin="normal"
         label="Message"
         multiline
-        rows={4}
+        rows={8}
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         required
+        sx={{
+          '& .MuiOutlinedInput-root': {
+            '&.Mui-focused fieldset': {
+              borderColor: prefersDarkMode ? '#F0F0F0' : 'defaultColor',
+            },
+            color: prefersDarkMode ? '#F0F0F0' : 'defaultTextColor',
+          },
+          '& .MuiInputLabel-root': {
+            '&.Mui-focused': {
+              color: prefersDarkMode ? '#F0F0F0' : 'defaultColor',
+            },
+          },
+        }}
       />
       <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
         <ReCAPTCHA
