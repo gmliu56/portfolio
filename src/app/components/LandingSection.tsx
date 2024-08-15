@@ -5,7 +5,7 @@ import styles from "./landingSection.module.css";
 
 const LandingSection: React.FC = () => {
     return (
-        <Container maxWidth="lg" sx={{display: "flex", flexDirection: {xs: "column", md:"row"}, gap: 4, mb: 8}}>
+        <Container maxWidth={false} className={styles.container} sx={{display: "flex", flexDirection: {xs: "column", md: "row"}}}>
             <Paper 
                 variant="outlined"
                 className={styles.profileCard}
@@ -21,43 +21,44 @@ const LandingSection: React.FC = () => {
                     You can find my work on this portfolio website.
                 </Typography>
             </Paper>
-            <Grid container spacing={4}>
+            <Grid container spacing={0}>
                 <Grid item xs={12} sx={{ textAlign: "center", height: 40 }}>
                     <Typography fontSize={30} className={styles.workTitle}>
                         My Work
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <Card variant="outlined" className={styles.workCard}>
-                        <CardMedia 
-                            sx={{width: "100%", height: 140}}
-                            component="img"
-                            src="/promatch.png"
-                            title="Promatch landing page"
-                            className={styles.workCardImage}
-                        />
-                        <CardContent>
-                            <Typography variant="h6" className={styles.workCardTitle}>
-                                ProMatch Landing Page
-                            </Typography>
-                            <Typography className={styles.workCardParagraph}>
-                                The marketing landing page for an AI recruiting company ProMatch.
-                                Includes features such as localization and SSR from Sanity.
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="medium">
-                                <Link 
-                                    href="https://promatch.ai" 
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    View Website 
-                                    <OpenInNewIcon sx={{ml:1}} />
-                                </Link>
-                            </Button>
-                        </CardActions>
-                    </Card> 
+                <Grid container spacing={4}>
+                    <Grid item xs={12} md={6}>
+                        <Card variant="outlined" className={styles.workCard}>
+                            <CardMedia 
+                                component="img"
+                                src="/promatch.png"
+                                title="Promatch landing page"
+                                className={styles.workCardImage}
+                            />
+                            <CardContent>
+                                <Typography variant="h6" className={styles.workCardTitle}>
+                                    ProMatch Landing Page
+                                </Typography>
+                                <Typography className={styles.workCardParagraph}>
+                                    The marketing landing page for an AI recruiting company ProMatch.
+                                    Includes features such as localization and SSR from Sanity.
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="medium">
+                                    <Link 
+                                        href="https://promatch.ai" 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View Website 
+                                        <OpenInNewIcon sx={{ml:1}} />
+                                    </Link>
+                                </Button>
+                            </CardActions>
+                        </Card> 
+                    </Grid>
                 </Grid>
             </Grid>
         </Container>
