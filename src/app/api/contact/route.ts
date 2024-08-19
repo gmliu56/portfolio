@@ -35,7 +35,8 @@ export async function POST(req: Request) {
   try {
     await transporter.sendMail(mailOptions);
     return NextResponse.json({ success: true });
-  } catch (error) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (_) {
     return NextResponse.json({ error: 'Failed to send the email' }, { status: 500 });
   }
 }

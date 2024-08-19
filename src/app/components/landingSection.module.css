@@ -1,26 +1,32 @@
 .container {
-    @apply bg-blue-700 w-full py-24 sm:px-8 lg:px-24 gap-8;
+    @apply bg-blue-600 dark:bg-blue-800 w-full py-24 sm:px-8 lg:px-24 gap-12;
 }
 
 .profileCard {
     @apply flex flex-col justify-center items-center;
-    @apply p-6 border-4 rounded-lg border-blue-900;
-    @apply dark:text-slate-200 dark:bg-slate-800;
+    @apply bg-gradient-to-br from-teal-100 to-cyan-400 shadow-lg text-gray-800 dark:from-teal-700 dark:to-cyan-800 dark:text-gray-50;
+    @apply transform transition-transform duration-200 ease-in-out hover:translate-y-[-10px] hover:shadow-xl;
+    @apply p-6 border border-gray-400 rounded-lg;
+    
 }
 
 .profileTitle {
     @apply font-semibold mb-2;
 }
 
+.profileParagraph {
+    @apply text-base leading-relaxed;
+}
+
 .workTitle {
-    @apply mb-4 text-blue-950 bg-orange-300 border-2 rounded-lg border-orange-600;
-    @apply dark:text-blue-100 dark:bg-orange-800;
+    @apply mb-4 text-blue-950 bg-gradient-to-r from-blue-200 to-blue-300 border border-gray-400 rounded-lg;
+    @apply dark:text-blue-100 dark:from-blue-800 dark:to-blue-950;
 }
 
 .workCard {
-    @apply mt-4 p-2 bg-white border-2 rounded-lg border-orange-600;
+    @apply mt-4 p-2 border rounded-lg border-gray-400 bg-gray-100 text-gray-900;
     @apply hover:scale-105 transition ease-in-out;
-    @apply dark:text-slate-200 dark:bg-slate-800;
+    @apply dark:text-gray-50 dark:bg-slate-800;
 }
 
 .workCardImage {

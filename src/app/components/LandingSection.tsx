@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Avatar, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Paper, Typography } from "@mui/material";
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Link from "next/link";
@@ -7,7 +8,7 @@ const LandingSection: React.FC = () => {
     return (
         <Container maxWidth={false} className={styles.container} sx={{display: "flex", flexDirection: {xs: "column", md: "row"}}}>
             <Paper 
-                variant="outlined"
+                variant="elevation"
                 className={styles.profileCard}
                 sx={{ width: { xs: "100%", md: "40%" } }}
             >
@@ -15,7 +16,7 @@ const LandingSection: React.FC = () => {
                 <Typography variant="h5" className={styles.profileTitle}>
                     About Me
                 </Typography>
-                <Typography>
+                <Typography className={styles.profileParagraph}>
                     My name is Guanming (Nicholas) Liu and 
                     I am a Software/Web Developer based in Vancouver, BC, Canada.
                     You can find my work on this portfolio website.
@@ -42,7 +43,7 @@ const LandingSection: React.FC = () => {
                                 </Typography>
                                 <Typography className={styles.workCardParagraph}>
                                     The marketing landing page for an AI recruiting company ProMatch.
-                                    Includes features such as localization and SSR from Sanity.
+                                    Built features such as localization, language switch and Blog Posts using Content Management Systems (CMS) from Sanity.
                                 </Typography>
                             </CardContent>
                             <CardActions>
@@ -52,7 +53,7 @@ const LandingSection: React.FC = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        View Website 
+                                        View Website
                                         <OpenInNewIcon sx={{ml:1}} />
                                     </Link>
                                 </Button>

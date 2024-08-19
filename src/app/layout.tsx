@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";

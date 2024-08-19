@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography, Box, Link, IconButton, Grid } from '@mui/material';
-import { GitHub, LinkedIn, Twitter, Email } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 
 const Footer: React.FC = () => {
   return (

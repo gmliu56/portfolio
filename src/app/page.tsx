@@ -1,4 +1,5 @@
-import Image from "next/image";
+/* Author: Guanming Liu */
+/* eslint-disable react/react-in-jsx-scope */
 import Header from "./components/Header";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
