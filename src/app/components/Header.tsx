@@ -19,7 +19,7 @@ const Header: React.FC = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
           >
-            Guanming Liu (Nicholas)'s Portfolio
+            Guanming Liu (Nicholas)&apos;s Portfolio
           </Typography>
 
           {/* Social Icons */}
