@@ -1,69 +1,122 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Avatar, Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Paper, Typography } from "@mui/material";
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import {
+  Avatar,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Link from "next/link";
 import styles from "./landingSection.module.css";
 
 const LandingSection: React.FC = () => {
-    return (
-        <Container maxWidth={false} className={styles.container} sx={{display: "flex", flexDirection: {xs: "column", md: "row"}}}>
-            <Paper 
-                variant="elevation"
-                className={styles.profileCard}
-                sx={{ width: { xs: "100%", md: "40%" } }}
-            >
-                <Avatar src="" alt="Guanming Liu" sx={{ width: 80, height: 80, mb: 2 }}/>
-                <Typography variant="h5" className={styles.profileTitle}>
-                    About Me
+  return (
+    <Container
+      maxWidth={false}
+      className={styles.container}
+      sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
+    >
+      <Paper
+        variant="elevation"
+        className={styles.profileCard}
+        sx={{ width: { xs: "100%", md: "40%" } }}
+      >
+        <Avatar
+          src="/images/avatar.jpeg"
+          alt="Guanming Liu"
+          sx={{ width: 100, height: 100, mb: 2 }}
+        />
+        <Typography variant="h5" className={styles.profileTitle}>
+          About Me
+        </Typography>
+        <Typography className={styles.profileParagraph}>
+          My name is Guanming (Nicholas) Liu and I am a Software/Web Developer
+          based in Vancouver, BC, Canada. You can find my work on this portfolio
+          website.
+        </Typography>
+      </Paper>
+      <Grid container spacing={0}>
+        <Grid item xs={12} sx={{ textAlign: "center", height: 40 }}>
+          <Typography fontSize={30} className={styles.workTitle}>
+            My Work
+          </Typography>
+        </Grid>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <Card variant="outlined" className={styles.workCard}>
+              <CardMedia
+                component="img"
+                src="/promatch.png"
+                title="Promatch landing page"
+                className={styles.workCardImage}
+              />
+              <CardContent>
+                <Typography variant="h6" className={styles.workCardTitle}>
+                  ProMatch Marketing Page
                 </Typography>
-                <Typography className={styles.profileParagraph}>
-                    My name is Guanming (Nicholas) Liu and 
-                    I am a Software/Web Developer based in Vancouver, BC, Canada.
-                    You can find my work on this portfolio website.
+                <Typography className={styles.workCardParagraph}>
+                  The marketing landing page for an AI recruiting company
+                  ProMatch. Built features such as localization, language switch
+                  and Blog Posts using Content Management Systems (CMS) from
+                  Sanity.
                 </Typography>
-            </Paper>
-            <Grid container spacing={0}>
-                <Grid item xs={12} sx={{ textAlign: "center", height: 40 }}>
-                    <Typography fontSize={30} className={styles.workTitle}>
-                        My Work
-                    </Typography>
-                </Grid>
-                <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
-                        <Card variant="outlined" className={styles.workCard}>
-                            <CardMedia 
-                                component="img"
-                                src="/promatch.png"
-                                title="Promatch landing page"
-                                className={styles.workCardImage}
-                            />
-                            <CardContent>
-                                <Typography variant="h6" className={styles.workCardTitle}>
-                                    ProMatch Landing Page
-                                </Typography>
-                                <Typography className={styles.workCardParagraph}>
-                                    The marketing landing page for an AI recruiting company ProMatch.
-                                    Built features such as localization, language switch and Blog Posts using Content Management Systems (CMS) from Sanity.
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="medium">
-                                    <Link 
-                                        href="https://promatch.ai" 
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        View Website
-                                        <OpenInNewIcon sx={{ml:1}} />
-                                    </Link>
-                                </Button>
-                            </CardActions>
-                        </Card> 
-                    </Grid>
-                </Grid>
-            </Grid>
-        </Container>
-    );
+              </CardContent>
+              <CardActions>
+                <Button size="medium">
+                  <Link
+                    href="https://promatch.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Website
+                    <OpenInNewIcon sx={{ ml: 1 }} />
+                  </Link>
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card variant="outlined" className={styles.workCard}>
+              <CardMedia
+                component="img"
+                src="/promatch.png"
+                title="Promatch"
+                className={styles.workCardImage}
+              />
+              <CardContent>
+                <Typography variant="h6" className={styles.workCardTitle}>
+                  ProMatch (Chinese Site) 中文站
+                </Typography>
+                <Typography className={styles.workCardParagraph}>
+                  The next-gen AI-driven Application Tracking System (ATS).
+                  Offering a highly customizable AI automated hiring solution
+                  that filters through candidates.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="medium">
+                  <Link
+                    href="https://promatch-ai.hackhub.cn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Website (Chinese)
+                    <OpenInNewIcon sx={{ ml: 1 }} />
+                  </Link>
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
+  );
 };
 
 export default LandingSection;
