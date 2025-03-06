@@ -1,0 +1,17 @@
+:root {
+  --bg-light: #f8f9fa; // 柔和的云白色
+  --text-light: #2d2d2d; // 深石墨色
+  --primary-light: #2563eb; // 专业钴蓝
+  --secondary-light: #3b82f6; // 互动蓝
+  --accent-light: #7c3aed; // 科技紫
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-dark: #121212; // 深空黑
+    --text-dark: #e0e0e0; // 柔光白
+    --primary-dark: #3b82f6; // 保持品牌蓝
+    --secondary-dark: #60a5fa; // 提亮辅助色
+    --accent-dark: #8b5cf6; // 霓虹紫
+  }
+}

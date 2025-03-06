@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Container,
@@ -5,15 +6,22 @@ import {
   Box,
   Link,
   IconButton,
-  Grid,
+  Grid2 as Grid,
 } from "@mui/material";
 import { GitHub, LinkedIn } from "@mui/icons-material";
+import { useThemeContext } from "../contexts/themeContext";
 
 const Footer: React.FC = () => {
+  const { mode } = useThemeContext();
   return (
     <Box
       component="footer"
-      sx={{ bgcolor: "primary.main", color: "white", py: 3 }}
+      sx={{
+        bgcolor: "primary.main",
+        color: "white",
+        py: 3,
+        backgroundColor: mode === "light" ? "#2563EB" : "#3B82F6",
+      }}
     >
       <Container maxWidth="lg">
         <Grid
@@ -21,20 +29,8 @@ const Footer: React.FC = () => {
           spacing={4}
           sx={{ textAlign: { xs: "center", md: "left" } }}
         >
-          {/* About Me Section */}
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              About Me
-            </Typography>
-            <Typography variant="body2" sx={{ lineHeight: 1.7 }}>
-              I am a passionate developer with experience in building modern web
-              applications. I love to create clean and responsive designs using
-              the latest technologies.
-            </Typography>
-          </Grid>
-
           {/* Quick Links Section */}
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom>
               Quick Links
             </Typography>
@@ -54,7 +50,7 @@ const Footer: React.FC = () => {
           </Grid>
 
           {/* Social Media Section */}
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom>
               Connect with Me
             </Typography>
