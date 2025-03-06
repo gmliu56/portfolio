@@ -1,0 +1,27 @@
+{
+  "about": {
+    "imageSrc": "/images/avatar.jpeg",
+    "imageAlt": "Guanming Liu",
+    "title": "About Me",
+    "body": "My name is Guanming (Nicholas) Liu and I am a Software/Web Developer based in Vancouver, BC, Canada. You can find my work on this portfolio website. I am passionated and experienced in building modern web applications. I love to create robust and responsive designs using the latest technologies."
+  },
+  "projects": {
+    "title": "My Work",
+    "list": [
+      {
+        "title": "ProMatch Marketing Page",
+        "description": "The marketing landing page for an AI recruiting company ProMatch. Built features such as localization, language switch and Blog Posts using Content Management Systems (CMS) from Sanity.",
+        "imageSrc": "/promatch.png",
+        "link": "https://promatch.ai",
+        "displayAction": "View Website"
+      },
+      {
+        "title": "ProMatch (Chinese Site) 中文站",
+        "description": "The next-gen AI-driven Application Tracking System (ATS). Offering a highly customizable AI automated hiring solution that filters through candidates.",
+        "imageSrc": "/promatch.png",
+        "link": "https://promatch-ai.hackhub.cn",
+        "displayAction": "View Website"
+      }
+    ]
+  }
+}
