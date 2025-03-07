@@ -10,7 +10,7 @@
     "list": [
       {
         "title": "ProMatch Marketing Page",
-        "description": "The marketing landing page for an AI recruiting company ProMatch. Built features such as localization, language switch and Blog Posts using Content Management Systems (CMS) from Sanity.",
+        "description": "The SEO marketing landing page for an AI recruiting company ProMatch. Built features such as localization, language switch and Blog Posts using CMS from Sanity.",
         "imageSrc": "/promatch.png",
         "link": "https://promatch.ai",
         "displayAction": "View Website"
@@ -23,5 +23,12 @@
         "displayAction": "View Website"
       }
     ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "sendButton": "Send Message"
   }
 }

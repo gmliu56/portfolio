@@ -1,15 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useThemeContext } from "../contexts/themeContext";
+import { ThemeContext } from "../contexts/themeContext";
+import contentEN from "../locale/en/home.json";
 
 const ContactForm: React.FC = () => {
-  const { mode } = useThemeContext();
+  const { mode } = use(ThemeContext);
+  const content = contentEN;
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -70,7 +73,7 @@ const ContactForm: React.FC = () => {
       }}
     >
       <Typography variant="h4" gutterBottom>
-        Contact Me
+        {content.contact.title}
       </Typography>
 
       {alertMessage && (
@@ -82,7 +85,7 @@ const ContactForm: React.FC = () => {
       <TextField
         fullWidth
         margin="normal"
-        label="Name"
+        label={content.contact.nameLabel}
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
@@ -90,7 +93,7 @@ const ContactForm: React.FC = () => {
       <TextField
         fullWidth
         margin="normal"
-        label="Email"
+        label={content.contact.emailLabel}
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -99,7 +102,7 @@ const ContactForm: React.FC = () => {
       <TextField
         fullWidth
         margin="normal"
-        label="Message"
+        label={content.contact.messageLabel}
         multiline
         rows={8}
         value={message}
@@ -123,7 +126,7 @@ const ContactForm: React.FC = () => {
           },
         }}
       >
-        Send Message
+        {content.contact.sendButton}
       </Button>
     </Box>
   );

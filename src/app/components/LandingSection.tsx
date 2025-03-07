@@ -15,10 +15,11 @@ import {
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Link from "next/link";
 import contentEN from "@/app/locale/en/home.json";
-import { useThemeContext } from "@/app/contexts/themeContext";
+import { ThemeContext } from "@/app/contexts/themeContext";
+import { use } from "react";
 
 const LandingSection: React.FC = () => {
-  const { mode } = useThemeContext();
+  const { mode } = use(ThemeContext);
   const content = contentEN;
 
   return (
@@ -38,7 +39,7 @@ const LandingSection: React.FC = () => {
       <Paper
         variant="elevation"
         sx={{
-          width: { xs: "100%", lg:"80%" },
+          width: { xs: "100%", lg: "80%" },
           minWidth: { xs: "300px" },
           padding: 4,
           display: "flex",
@@ -80,15 +81,26 @@ const LandingSection: React.FC = () => {
 
       {/* Work Display */}
       <Grid container spacing={4} sx={{ marginBottom: 4 }}>
-        <Grid size={{ xs: 12 }} sx={{ textAlign: "center", height: 40 }}>
+        <Grid
+          size={{ xs: 12 }}
+          sx={{
+            textAlign: "center",
+            height: 40,
+            background: mode === "light" ? "#8B5CF6" : "#7c3aed",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
+            border: "1px solid gray",
+            borderRadius: "0.375rem",
+            boxShadow: 2,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Typography
             sx={{
               fontSize: 30,
               color: mode === "light" ? "#2D2D2D" : "#E0E0E0",
-              background: mode === "light" ? "#8B5CF6" : "#7c3aed",
-              border: "1px solid gray",
-              borderRadius: "0.375rem",
-              boxShadow: 2,
             }}
           >
             {content.projects.title}
@@ -109,10 +121,9 @@ const LandingSection: React.FC = () => {
                 color: mode === "light" ? "#2D2D2D" : "#E0E0E0",
                 background:
                   mode === "light"
-                    ? "rgba(255, 255, 255, 0.7)"
-                    : "rgba(30, 30, 30, 0.7)",
-                backdropFilter: "blur(12px)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
+                    ? "rgba(255, 255, 255, 0.2)"
+                    : "rgba(30, 30, 30, 0.3)",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
                 boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
               }}
             >
@@ -125,6 +136,7 @@ const LandingSection: React.FC = () => {
               <CardContent>
                 <Typography variant="h6">{project.title}</Typography>
                 <Typography
+                  
                   sx={{
                     display: "-webkit-box",
                     WebkitBoxOrient: "vertical",

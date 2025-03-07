@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {use} from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -7,10 +7,12 @@ import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { DarkMode, GitHub, LightMode, LinkedIn } from "@mui/icons-material";
-import { useThemeContext } from "../contexts/themeContext";
+import { ThemeContext } from "../contexts/themeContext";
+import contentEN from "../locale/en/header.json";
 
 const Header: React.FC = () => {
-  const { mode, toggleMode } = useThemeContext();
+  const { mode, toggleMode } = use(ThemeContext);
+  const content = contentEN;
   return (
     <AppBar
       position="sticky"
@@ -28,7 +30,7 @@ const Header: React.FC = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
-            Guanming Liu (Nicholas)&apos;s Portfolio
+            {content.title}
           </Typography>
 
           {/* Social Icons */}
