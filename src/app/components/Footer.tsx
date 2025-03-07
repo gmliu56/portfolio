@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
 import {
   Container,
   Typography,
@@ -9,10 +9,13 @@ import {
   Grid2 as Grid,
 } from "@mui/material";
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import { useThemeContext } from "../contexts/themeContext";
+import { ThemeContext } from "../contexts/themeContext";
+import contentEN from "@/app/locale/en/footer.json";
 
 const Footer: React.FC = () => {
-  const { mode } = useThemeContext();
+  const { mode } = use(ThemeContext);
+  const content = contentEN;
+
   return (
     <Box
       component="footer"
@@ -32,11 +35,11 @@ const Footer: React.FC = () => {
           {/* Quick Links Section */}
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom>
-              Quick Links
+              {content.quickLinks}
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Link href="#" color="inherit" underline="hover" sx={{ mb: 1 }}>
-                Home
+                {content.home}
               </Link>
               <Link
                 href="#contact-section"
@@ -44,7 +47,7 @@ const Footer: React.FC = () => {
                 underline="hover"
                 sx={{ mb: 1 }}
               >
-                Contact
+                {content.contact}
               </Link>
             </Box>
           </Grid>
@@ -52,7 +55,7 @@ const Footer: React.FC = () => {
           {/* Social Media Section */}
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom>
-              Connect with Me
+              {content.connect}
             </Typography>
             <Box
               sx={{
@@ -85,7 +88,7 @@ const Footer: React.FC = () => {
 
         <Box sx={{ textAlign: "center", mt: 4 }}>
           <Typography variant="body2">
-            &copy; {new Date().getFullYear()} Guanming Liu. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Guanming Liu. {content.copyright}
           </Typography>
         </Box>
       </Container>
