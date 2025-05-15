@@ -1,6 +1,6 @@
 "use client";
 /* eslint-disable react/react-in-jsx-scope */
-import { Avatar, Box, Button, Container, Typography } from "@mui/material";
+import { Avatar, Box, Button, Typography } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Link from "next/link";
 import contentEN from "@/app/locale/en/home.json";
@@ -20,17 +20,15 @@ const LandingSection: React.FC = () => {
   const content = contentEN;
 
   return (
-    <Container
-      maxWidth={"xl"}
+    <Box
       sx={{
+        width: "100%",
         display: "flex",
         flexDirection: { xs: "column", lg: "column" },
         backgroundColor:
           mode === "dark" ? darkModeBackgroundColor : lightModeBackgroundColor,
-        width: "100%",
-        py: 8,
-        px: { sm: 8 },
-        gap: 20
+        px: { xs: 4, md: 8 },
+        gap: 20,
       }}
     >
       {/* About Section */}
@@ -70,82 +68,87 @@ const LandingSection: React.FC = () => {
 
       {/* Work Display */}
       <Box id="work-section">
-      <Typography
-        variant="h3"
-        sx={{
-          textAlign: "center",
-          fontWeight: "bold",
-          color: mode === "dark" ? darkModeTextColor : lightModeTextColor,
-        }}
-      >
-        {content.projects.title}
-      </Typography>
-      {content.projects.list.map((project, index) => (
-        <Box
-          key={index}
+        <Typography
+          variant="h3"
           sx={{
+            textAlign: "center",
+            fontWeight: "bold",
             color: mode === "dark" ? darkModeTextColor : lightModeTextColor,
-            display: "flex",
-            flexDirection: { xs: "column-reverse", lg: "row" },
-            justifyContent: "space-around",
-            alignItems: "center",
-            mb: 15
           }}
         >
-          <Box sx={{ maxWidth: "600px" }}>
-            <Typography variant="h5" sx={{mb: 1}}>{project.title}</Typography>
-            <Typography
-              sx={{
-                display: "-webkit-box",
-                WebkitBoxOrient: "vertical",
-                WebkitLineClamp: 4, // lines limit
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                height: "6em",
-              }}
-            >
-              {project.description}
-            </Typography>
-            <Button
-              size="medium"
-              sx={{
-                backgroundColor:
-                  mode === "dark"
-                    ? darkModePrimaryColor
-                    : lightModePrimaryColor,
-                "&:hover": {
-                  backgroundColor:
-                    mode === "dark"
-                      ? lightModePrimaryColor
-                      : darkModePrimaryColor,
-                },
-              }}
-            >
-              <Link
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white"
-              >
-                {project.displayAction}
-                <OpenInNewIcon sx={{ ml: 1 }} />
-              </Link>
-            </Button>
-          </Box>
+          {content.projects.title}
+        </Typography>
+        {content.projects.list.map((project, index) => (
           <Box
+            key={index}
             sx={{
-              width: 400,
-              height: 250,
+              color: mode === "dark" ? darkModeTextColor : lightModeTextColor,
               display: "flex",
+              flexDirection: { xs: "column-reverse", lg: "row" },
+              justifyContent: "space-around",
               alignItems: "center",
+              mb: 15,
             }}
           >
-            <img src={project.imageSrc} style={{ objectFit: "contain", borderRadius:"10px" }} />
+            <Box sx={{ maxWidth: "600px" }}>
+              <Typography variant="h5" sx={{ mb: 1 }}>
+                {project.title}
+              </Typography>
+              <Typography
+                sx={{
+                  display: "-webkit-box",
+                  WebkitBoxOrient: "vertical",
+                  WebkitLineClamp: 4, // lines limit
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  height: "6em",
+                }}
+              >
+                {project.description}
+              </Typography>
+              <Button
+                size="medium"
+                sx={{
+                  backgroundColor:
+                    mode === "dark"
+                      ? darkModePrimaryColor
+                      : lightModePrimaryColor,
+                  "&:hover": {
+                    backgroundColor:
+                      mode === "dark"
+                        ? lightModePrimaryColor
+                        : darkModePrimaryColor,
+                  },
+                }}
+              >
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white"
+                >
+                  {project.displayAction}
+                  <OpenInNewIcon sx={{ ml: 1 }} />
+                </Link>
+              </Button>
+            </Box>
+            <Box
+              sx={{
+                width: { xs: 300, md: 400 },
+                height: 250,
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={project.imageSrc}
+                style={{ objectFit: "contain", borderRadius: "10px" }}
+              />
+            </Box>
           </Box>
-        </Box>
-      ))}
+        ))}
       </Box>
-    </Container>
+    </Box>
   );
 };
 
