@@ -15,6 +15,7 @@
     "@mui/material": "^6.4.7",
     "next": "^15.2.1",
     "nodemailer": "^6.9.14",
+    "npm": "^11.2.0",
     "npm-check-updates": "^17.1.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
