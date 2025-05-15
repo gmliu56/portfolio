@@ -8,6 +8,7 @@ import Alert from "@mui/material/Alert";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ThemeContext } from "../contexts/themeContext";
 import contentEN from "../locale/en/home.json";
+import { darkModeBackgroundColor, darkModePrimaryColor, darkModeTextColor, lightModeBackgroundColor, lightModePrimaryColor, lightModeTextColor } from "../style/theme";
 
 const ContactForm: React.FC = () => {
   const { mode } = use(ThemeContext);
@@ -68,11 +69,11 @@ const ContactForm: React.FC = () => {
         px-[10%] xs:px-[10%] md:px-[15%] lg:px-[25%] 
         dark:bg-green-700"
       sx={{
-        color: mode === "light" ? "#2D2D2D" : "#E0E0E0",
-        backgroundColor: mode === "light" ? "#F8F9FA" : "#5f5f5f",
+        color: mode === "dark" ? darkModeTextColor : lightModeTextColor,
+        backgroundColor: mode === "dark" ? darkModeBackgroundColor : lightModeBackgroundColor,
       }}
     >
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h3" gutterBottom sx={{fontWeight: "bold"}}>
         {content.contact.title}
       </Typography>
 
@@ -120,9 +121,9 @@ const ContactForm: React.FC = () => {
         variant="contained"
         sx={{
           mt: 2,
-          backgroundColor: mode === "light" ? "#2563EB" : "#3B82F6",
+          backgroundColor: mode === "dark" ? darkModePrimaryColor : lightModePrimaryColor,
           "&:hover": {
-            backgroundColor: mode === "light" ? "#3B82F6" : "#2563EB",
+            backgroundColor: mode === "dark" ? lightModePrimaryColor : darkModePrimaryColor,
           },
         }}
       >

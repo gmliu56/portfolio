@@ -11,6 +11,7 @@ import {
 import { GitHub, LinkedIn } from "@mui/icons-material";
 import { ThemeContext } from "../contexts/themeContext";
 import contentEN from "@/app/locale/en/footer.json";
+import { darkModePrimaryColor, lightModePrimaryColor } from "../style/theme";
 
 const Footer: React.FC = () => {
   const { mode } = use(ThemeContext);
@@ -23,7 +24,8 @@ const Footer: React.FC = () => {
         bgcolor: "primary.main",
         color: "white",
         py: 3,
-        backgroundColor: mode === "light" ? "#2563EB" : "#3B82F6",
+        backgroundColor:
+          mode === "dark" ? darkModePrimaryColor : lightModePrimaryColor,
       }}
     >
       <Container maxWidth="lg">

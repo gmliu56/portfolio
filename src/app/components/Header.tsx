@@ -1,5 +1,5 @@
 "use client";
-import React, {use} from "react";
+import React, { use } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -9,6 +9,13 @@ import Container from "@mui/material/Container";
 import { DarkMode, GitHub, LightMode, LinkedIn } from "@mui/icons-material";
 import { ThemeContext } from "../contexts/themeContext";
 import contentEN from "../locale/en/header.json";
+import {
+  darkModeBackgroundColor,
+  darkModeTextColor,
+  lightModeBackgroundColor,
+  lightModeTextColor,
+} from "../style/theme";
+import { Link } from "@mui/material";
 
 const Header: React.FC = () => {
   const { mode, toggleMode } = use(ThemeContext);
@@ -17,8 +24,9 @@ const Header: React.FC = () => {
     <AppBar
       position="sticky"
       sx={{
-        color: mode === "light" ? "#2D2D2D" : "#E0E0E0",
-        backgroundColor: mode === "light" ? "#F8F9FA" : "#121212",
+        color: mode === "dark" ? darkModeTextColor : lightModeTextColor,
+        backgroundColor:
+          mode === "dark" ? darkModeBackgroundColor : lightModeBackgroundColor,
       }}
     >
       <Container maxWidth="xl">
@@ -32,6 +40,32 @@ const Header: React.FC = () => {
           >
             {content.title}
           </Typography>
+
+          {/* Links to Sections */}
+          <Link
+            href="#about-section"
+            color="inherit"
+            underline="hover"
+            sx={{ mx: "10px" }}
+          >
+            <Typography>About</Typography>
+          </Link>
+          <Link
+            href="#work-section"
+            color="inherit"
+            underline="hover"
+            sx={{ mx: "10px" }}
+          >
+            <Typography>Work</Typography>
+          </Link>
+          <Link
+            href="#contact-section"
+            color="inherit"
+            underline="hover"
+            sx={{ mx: "10px" }}
+          >
+            <Typography>Contact</Typography>
+          </Link>
 
           {/* Social Icons */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -61,7 +95,7 @@ const Header: React.FC = () => {
               {mode === "dark" ? (
                 <LightMode fontSize="large" />
               ) : (
-                <DarkMode fontSize="large" sx={{color:"#121212"}} />
+                <DarkMode fontSize="large" sx={{ color: "#121212" }} />
               )}
             </IconButton>
           </Box>
